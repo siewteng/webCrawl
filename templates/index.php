@@ -1,0 +1,226 @@
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        font-family: "Rubik", "sans-serif";
+    }
+
+    div {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    h1 {
+        color: red;
+        font-size: 40pt;
+    }
+
+    p {
+        font-size: 24pt;
+    }
+</style>
+
+<div>
+    <h1>Welcome!</h1><br>
+    <p>This site has been visited {{ count }} times.</p>
+</div> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Web Crawling Thingy</title>
+  <meta charset="utf-8">
+  <style>
+    header {
+      height: 50px;
+      padding-top: 20px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    #wrapper {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      font-weight: lighter;
+      letter-spacing: 2px;
+      width: 100%;
+      min-width: 800px;
+    }
+
+    #instruction {
+      padding: 10px;
+      background-color: #1c1c1c;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 2%;
+    }
+
+    nav a:hover {
+      color: grey;
+      text-decoration: none;
+      margin: 2%;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    #leftcolumn {
+      float: left;
+      width: 16%;
+      text-align: left;
+      padding: 50px 20px 0px 0px;
+      margin-left: 10%;
+    }
+
+    #rightcolumn {
+      margin-left: 26%;
+      padding: 20px 20px 0px 20px;
+      margin-right: 15%;
+      height: 1000px;
+    }
+
+    #rightcolumn span {
+      float: right;
+      background-color: white;
+      color: #1c1c1c;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      font-weight: lighter;
+      letter-spacing: 2px;
+      border: 2px solid black;
+      border-radius: 5px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      height: auto;
+      width: auto;
+      padding: 2px 2px 2px 2px;
+    }
+
+    #middlecolumn {
+      margin-left: 20%;
+      margin-right: 20%;
+      padding: 20px 20px 20px 20px;
+      align-items: center;
+    }
+
+    .dot {
+      height: 10px;
+      width: 10px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #1c1c1c;
+      color: #ffffff;
+      font-size: 80%;
+      text-align: center;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      font-weight: lighter;
+      letter-spacing: 2px;
+    }
+
+    table {
+      table-layout: fixed;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #1c1c1c;
+      color: white;
+    }
+
+    .form {
+      padding-left: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .form table {
+      height: 80px;
+    }
+
+    .form input[type="submit"] {
+      background-color: white;
+      color: #1c1c1c;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      font-weight: lighter;
+      letter-spacing: 2px;
+      outline: none;
+      display: inline-block;
+      border: 2px solid black;
+      border-radius: 5px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+    }
+
+    .form input[type="text"] {
+      background-color: white;
+      color: #1c1c1c;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      font-weight: lighter;
+      letter-spacing: 2px;
+      border: 2px solid black;
+      border-radius: 5px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      height: 40px;
+      width: 100%;
+    }
+
+
+    button:hover {
+      background-color: #1c1c1c;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+    <header id="logo">
+      <b>web crawling thingy</b>
+    </header>
+    <div id="instruction">
+      <b>Input the URL of a Reddit post to crawl</b>
+    </div>
+    <div id="middlecolumn">
+      <div class="form">
+        <form method="post" action="" id="theForm">
+          <table>
+            <tr>
+              <td>URL:</td>
+              <td><input type="text" name="theURL" id="theURL" required></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <footer>
+        I'm not too sure what im doing at this point but im hoping you would hire me (please) <br><br>
+        <small>
+          <i>Copyright &copy; 2021</i>
+        </small>
+      </footer>
+</body>
+
+</html>
