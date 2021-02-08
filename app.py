@@ -4,6 +4,13 @@ import datetime
 from datetime import timezone
 from dateutil import tz
 
+import os
+import psycopg2
+
+# connecting to database
+DATABASE_URL = os.environ['DATABASE_URL']
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
 # datetime stuff
 from_zone = tz.tzutc()
 to_zone = tz.tzlocal()
