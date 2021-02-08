@@ -50,7 +50,7 @@ def index():
     # submission.comments.replace_more(limit=0)
     # for comment in submission.comments.list():
     #     print(comment.body)
-    return render_template("index.html", [])
+    return render_template("index.html")
 
 
 @app.route('/', methods=['POST'])
