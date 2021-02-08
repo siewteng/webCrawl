@@ -216,13 +216,17 @@
                     <input type="submit">
                 </form> <br>
                 <div>
+                    {% if mainPost %}
+                    <h1>Main Post:</h1>
                     {% for para in mainPost %}
                     <p>{{para}}</p>
                     {% endfor %}
+                    {% endif %}
                     <br>
-                    {% if commentInfo %}
+
+                    {% if commentBody %}
                     <h1>Comments:</h1>
-                    {% for para in commentInfo %}
+                    {% for para in commentBody %}
                     <p>{{para}}</p>
                     {% endfor %}
 
