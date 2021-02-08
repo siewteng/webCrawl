@@ -241,12 +241,26 @@
                     {% endif %}
 
 
-                    {% if commentBody %}
-                    <h1>Comments:</h1>
-                    {% for para in commentBody %}
-                    <p>{{para}}</p>
-                    {% endfor %}
-
+                    {% if commentId %}
+                    <!-- <table>
+                        <h1>Comments:</h1>
+                        {% for para in commentBody %}
+                        <p>{{para}}</p>
+                        {% endfor %}
+                    </table> -->
+                    <table>
+                        <h1>Comments:</h1>
+                        {% for x in range commentId|length %}
+                        <p>{{commentBody[x]}}<br><br>
+                            {{commentId[x]}}<br>
+                            {{commentAuthor[x]}}<br>
+                            {{commentScore[x]}}<br>
+                            {{commentParent[x]}}<br>
+                            {{commentTime[x]}}<br>
+                            <br>
+                        </p>
+                        {% endfor %}
+                    </table>
                     {% endif %}
 
 
