@@ -65,6 +65,7 @@ def my_form_post():
     # this is the specific url we want to crawl
     submission = reddit.submission(
         url=theURL)
+    submission.comments.replace_more(limit=0)
 
     submissionDateTime = datetime.datetime.fromtimestamp(
         submission.created_utc)
@@ -73,8 +74,6 @@ def my_form_post():
 
     mainPost = [submission.author, submission.title,
                 submission.selftext, str(submission.score), str(submissionDateTimeSG)]
-
-    submission.comments.replace_more(limit=0)
 
     commentId = []
     commentParent = []
