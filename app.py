@@ -65,7 +65,7 @@ def my_form_post():
     for comment in submission.comments.list():
         commentInfo.append(comment)
 
-    return render_template("index.html", mainPost=mainPost)
+    return render_template("index.html", mainPost=mainPost, commentInfo=commentInfo)
 
 
 if __name__ == "__main__":
