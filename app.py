@@ -51,7 +51,7 @@ def index():
     print("Time: " + str(datetime.datetime.fromtimestamp(submission.created_utc)))
 
     testText = submission.title + "<br>" + \
-        submission.selftext + "<br>" + submission.score + "<br>"
+        submission.selftext + "<br>" + str(submission.score) + "<br>"
     # # this searches infinitely the comments of comments and so on until there are none left
     # submission.comments.replace_more(limit=0)
     # for comment in submission.comments.list():
