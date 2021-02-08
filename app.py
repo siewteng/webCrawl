@@ -59,8 +59,13 @@ def my_form_post():
     # this is the specific url we want to crawl
     submission = reddit.submission(
         url=theURL)
-    testText = [submission.title, submission.selftext, str(submission.score)]
-    return render_template("index.html", testText=testText)
+    submission.comments.replace_more(limit=0)
+    mainPost = [submission.title, submission.selftext, str(submission.score)]
+    commentInfo = []
+    for comment in submission.comments.list():
+        commentInfo.append(comment)
+
+    return render_template("index.html", mainPost=mainPost)
 
 
 if __name__ == "__main__":

@@ -216,9 +216,18 @@
                     <input type="submit">
                 </form> <br>
                 <div>
-                    {% for para in testText %}
+                    {% for para in mainPost %}
                     <p>{{para}}</p>
                     {% endfor %}
+                    <br>
+                    {% if commentInfo != []}
+                    <h1>Comments:</h1>
+                    {% for para in commentInfo %}
+                    <p>{{para}}</p>
+                    {% endfor %}
+                    {% else %}
+                    {{ super() }}
+                    {% endif %}
                 </div>
             </div>
             <footer>
