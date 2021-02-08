@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import praw
-from datetime import datetime, timezone
+import datetime
+from datetime import timezone
 from dateutil import tz
 
 # datetime stuff
