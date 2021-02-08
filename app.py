@@ -82,7 +82,7 @@ def my_form_post():
         # configuring the datetime formatting
         dateTime = datetime.datetime.fromtimestamp(comment.created_utc)
         utc = dateTime.replace(tzinfo=from_zone)
-        SGdateTime = utc.replace(to_zone)
+        SGdateTime = utc.replace(int(to_zone))
         commentTime.append(SGdateTime)
 
     # return render_template("index.html", mainPost=mainPost, commentId=commentId,
