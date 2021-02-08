@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import praw
-import datetime
+from datetime import datetime, timezone
 from dateutil import tz
 
 # datetime stuff
@@ -81,8 +81,9 @@ def my_form_post():
 
         # configuring the datetime formatting
         dateTime = datetime.datetime.fromtimestamp(comment.created_utc)
-        utc = dateTime.replace(tzinfo=from_zone)
-        SGdateTime = utc.replace(int(to_zone))
+        SGdateTime = dateTime.replace(tzinfo=timezone.utc).astimezone(tz=None)
+        # utc = dateTime.replace(tzinfo=from_zone)
+        # SGdateTime = utc.replace(int(to_zone))
         commentTime.append(SGdateTime)
 
     # return render_template("index.html", mainPost=mainPost, commentId=commentId,
