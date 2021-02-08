@@ -95,9 +95,9 @@ def my_form_post():
         # SGdateTime = utc.replace(int(to_zone))
         commentTime.append(SGdateTime)
 
-    # return render_template("index.html", mainPost=mainPost, commentId=commentId,
-    #                        commentParent=commentParent, commentAuthor=commentAuthor, commentBody=commentBody, commentScore=commentScore, commentTime=commentTime)
-    return render_template("index.html", mainPost=mainPost, commentBody=commentBody)
+    return render_template("index.html", mainPost=mainPost, commentId=commentId,
+                           commentParent=commentParent, commentAuthor=commentAuthor, commentBody=commentBody, commentScore=commentScore, commentTime=commentTime)
+    # return render_template("index.html", mainPost=mainPost, commentBody=commentBody)
 
 
 if __name__ == "__main__":
