@@ -60,7 +60,7 @@ def my_form_post():
     submission = reddit.submission(
         url=theURL)
     testText = [submission.title, submission.selftext, str(submission.score)]
-    return render_template("index.html", testText)
+    return render_template("index.html", testText=testText)
 
 
 if __name__ == "__main__":
