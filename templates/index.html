@@ -216,27 +216,38 @@
                     <input type="submit">
                 </form> <br>
                 <div>
-                    {% if mainPost %}
-                    <h1>Main Post:</h1>
-                    {% for para in mainPost %}
-                    <p>{{para}}</p>
-                    {% endfor %}
-                    {% endif %}
-                    <br>
+                    <table>
+                        {% if mainPost %}
+                        <tr>
+                            <td colspan="5">
+                                <h1>Main Post:</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            {% for para in mainPost %}
+                            <td>{{para}}</td>
+                            {% endfor %}
 
-                    {% if commentBody %}
-                    <h1>Comments:</h1>
-                    {% for para in commentBody %}
-                    <p>{{para}}</p>
-                    {% endfor %}
+                            <br>
+                        </tr>
+                        {% endif %}
 
-                    {% endif %}
+
+                        {% if commentBody %}
+                        <h1>Comments:</h1>
+                        {% for para in commentBody %}
+                        <p>{{para}}</p>
+                        {% endfor %}
+
+                        {% endif %}
+                    </table>
+
                 </div>
             </div>
             <footer>
                 I'm not too sure what im doing at this point but im hoping you would hire me (please) <br><br>
                 <small>
-                    <i>Copyright &copy; 2021</i>
+                    <i>2021</i>
                 </small>
             </footer>
 </body>
