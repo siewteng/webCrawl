@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, request, render_template
 import praw
 import datetime
 
@@ -29,34 +29,38 @@ def index():
 
     # ----------------------------------------------------
 
-    # this is the specific url we want to crawl
-    submission = reddit.submission(
-        url="https://www.reddit.com/r/Genshin_Impact/comments/l9c3et/just_venti/")
-
     # this only searches the top level comments
     # submission.comments.replace_more(limit=0)
     # for top_level_comment in submission.comments:
     #     print(top_level_comment.body)
 
     # this prints the reddit post's title, text, etc?
-    print("Title: " + submission.title)
-    print("Text: " + submission.selftext)
-    print("score: " + str(submission.score))
-    print("ID: " + submission.id)
+    # print("Title: " + submission.title)
+    # print("Text: " + submission.selftext)
+    # print("score: " + str(submission.score))
+    # print("ID: " + submission.id)
 
     # still not sure how to put it in SG time
     #dateTime = datetime.datetime.fromtimestamp(submission.created_utc)
     #SGdateTime = dateTime.astimezone[datetime.tzname]
     #print("timezone: " + str(datetime.datetime.tzname(self)))
-    print("Time: " + str(datetime.datetime.fromtimestamp(submission.created_utc)))
-
-    testText = [submission.title, submission.selftext, str(submission.score)]
+    #print("Time: " + str(datetime.datetime.fromtimestamp(submission.created_utc)))
 
     # # this searches infinitely the comments of comments and so on until there are none left
     # submission.comments.replace_more(limit=0)
     # for comment in submission.comments.list():
     #     print(comment.body)
-    return render_template("index.html", testText=testText)
+    return render_template("index.html", [])
+
+
+@app.route('/', methods=['POST'])
+def my_form_post():
+    theURL = request.form['theURL']
+    # this is the specific url we want to crawl
+    submission = reddit.submission(
+        url=theURL)
+    testText = [submission.title, submission.selftext, str(submission.score)]
+    return render_template("index.html", testText)
 
 
 if __name__ == "__main__":
