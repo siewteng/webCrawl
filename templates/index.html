@@ -215,7 +215,9 @@
                     </table>
                 </form> <br>
                 <div>
-                    {{testText}}
+                    {% for para in testText %}
+                    <p>{{para}}</p>
+                    {% endfor %}
                 </div>
             </div>
             <footer>
