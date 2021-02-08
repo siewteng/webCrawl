@@ -86,7 +86,7 @@ def my_form_post():
     # insert into the postgress part as well
     insertDatabase = "INSERT INTO urls (url, id, title, author, body, time, upvotes) \
         VALUES ( % s, % s, % s, % s, % s, % s, % s)", (theURL, submission, submission.title, submission.author,
-                                                       submission.body, submissionDateTimeSG, submission.score)
+                                                       submission.selftext, submissionDateTimeSG, submission.score)
 
     commentId = []
     commentParent = []
