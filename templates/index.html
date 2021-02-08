@@ -216,8 +216,9 @@
                     <input type="submit">
                 </form> <br>
                 <div>
+
+                    {% if mainPost %}
                     <table>
-                        {% if mainPost %}
                         <tr>
                             <td colspan="5">
                                 <h1>Main Post:</h1>
@@ -230,17 +231,18 @@
 
                             <br>
                         </tr>
-                        {% endif %}
-
-
-                        {% if commentBody %}
-                        <h1>Comments:</h1>
-                        {% for para in commentBody %}
-                        <p>{{para}}</p>
-                        {% endfor %}
-
-                        {% endif %}
                     </table>
+                    {% endif %}
+
+
+                    {% if commentBody %}
+                    <h1>Comments:</h1>
+                    {% for para in commentBody %}
+                    <p>{{para}}</p>
+                    {% endfor %}
+
+                    {% endif %}
+
 
                 </div>
             </div>
