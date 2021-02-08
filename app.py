@@ -11,6 +11,8 @@ import psycopg2
 DATABASE_URL = os.environ['DATABASE_URL']
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
+cursor = conn.cursor()
+
 # datetime stuff
 from_zone = tz.tzutc()
 to_zone = tz.tzlocal()
@@ -81,6 +83,10 @@ def my_form_post():
 
     mainPost = [submission.author, submission.title,
                 submission.selftext, str(submission.score), str(submissionDateTimeSG)]
+    # insert into the postgress part as well
+    insertDatabase = "INSERT INTO comments (url, id, title, author, body, time, upvotes) \
+        VALUES ( % s, % s, % s, % s, % s, % s, % s)", (theURL, submission, submission.title, submission.author,
+                                                       submission.body, submissionDateTimeSG, submission.score)
 
     commentId = []
     commentParent = []
